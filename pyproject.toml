@@ -1,0 +1,31 @@
+[project]
+name = "anonymous"
+authors = [{ name = "anonymous", email = "anonymous@anonymous.com" }]
+dependencies = []
+requires-python = ">=3.10"
+keywords = [""]
+classifiers = [
+  "Topic :: Utilities",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+]
+dynamic = ["version"]
+
+[build-system]
+requires = ["pdm-pep517"]
+build-backend = "pdm.pep517.api"
+
+[project.scripts]
+anonymous = "anonymous.main:main"
+
+[tool.pdm]
+version = { from = "anonymous/__init__.py" }
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+profile = "black"
+atomic = true
+filter_files = true
