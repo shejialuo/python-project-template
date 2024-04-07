@@ -1,4 +1,4 @@
-import module
+from anonymous import module
 
 
 def test_print_hello_world():

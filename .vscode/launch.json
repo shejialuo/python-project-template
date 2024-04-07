@@ -6,7 +6,7 @@
   "configurations": [
     {
       "name": "Debug the module",
-      "type": "python",
+      "type": "debugpy",
       "request": "launch",
       "module": "anonymous.main",
       "justMyCode": true
