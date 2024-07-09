@@ -6,7 +6,7 @@ project mainly provides the environment setup for the [Visual Studio Code](https
 You should install the following extensions in the market:
 
 + `Python` and `Pylance`: the language server part.
-+ `autopep8`: the code formatter.
++ `black`: the code formatter.
 + `isort`: the import module formatter.
 
 ## The Build System
@@ -27,7 +27,7 @@ This project provides the settings of the VsCode at the workspace in the `.vscod
   "python.analysis.inlayHints.variableTypes": true,
   "[python]": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "ms-python.autopep8",
+    "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.codeActionsOnSave": {
       "source.organizeImports": "always",
     },
@@ -41,7 +41,7 @@ It will do the following things:
 1. For the language server, it will automatically import the module and test the type
 strictly to provide type safety. And also it would provide the type hint if there is
 no type annotation.
-2. For the language self, it will format the code using `autopep8` and sort
+2. For the language self, it will format the code using `black` and sort
 the import using `isort` every time you save the code.
 
 ## The Debugger Setup
@@ -58,7 +58,7 @@ a project, we should debug the program as the module, it is defined in the `.vsc
   "configurations": [
     {
       "name": "Debug the module",
-      "type": "python",
+      "type": "debugpy",
       "request": "launch",
       "module": "anonymous.main",
       "justMyCode": true
@@ -78,7 +78,6 @@ I decide to use `pytest`:
 
 ```json
 {
-  // ...
   "python.testing.pytestArgs": [
     "anonymous"
   ],

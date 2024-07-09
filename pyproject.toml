@@ -9,6 +9,7 @@ classifiers = [
   "Programming Language :: Python :: 3 :: Only",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
 ]
 dynamic = ["version"]
 
@@ -23,7 +24,7 @@ anonymous = "anonymous.main:main"
 version = { from = "anonymous/__init__.py" }
 
 [tool.black]
-line-length = 120
+line-length = 90
 
 [tool.isort]
 profile = "black"
