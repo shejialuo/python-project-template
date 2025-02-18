@@ -1,9 +1,15 @@
+[build-system]
+requires = ["pdm-backend", "pdm-build-locked"]
+build-backend = "pdm.backend"
+
 [project]
 name = "anonymous"
+description = "A python project start template"
 authors = [{ name = "anonymous", email = "anonymous@anonymous.com" }]
 dependencies = []
 requires-python = ">=3.10"
 keywords = [""]
+readme = "README.md"
 classifiers = [
   "Topic :: Utilities",
   "Programming Language :: Python :: 3 :: Only",
@@ -13,15 +19,14 @@ classifiers = [
 ]
 dynamic = ["version"]
 
-[build-system]
-requires = ["pdm-pep517"]
-build-backend = "pdm.pep517.api"
+[project.urls]
+Repository = "https://github.com/shejialuo/python-project-template"
 
 [project.scripts]
 anonymous = "anonymous.main:main"
 
-[tool.pdm]
-version = { from = "anonymous/__init__.py" }
+[tool.pdm.version]
+source = "scm"
 
 [tool.black]
 line-length = 90
